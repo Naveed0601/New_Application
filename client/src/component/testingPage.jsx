@@ -19,7 +19,7 @@ const TestingPage = () => {
     testingData();
   }, []);
 
-  return <div>{message}</div>;
+  return <div>{message.message}</div>;
 };
 
 export default TestingPage;
