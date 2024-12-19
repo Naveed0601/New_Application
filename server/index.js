@@ -1,6 +1,9 @@
 const express = require('express');
 const testapi = require('./routes/test');
+const cors = require("cors");
+
 const app = express();
+app.use(cors());
 
 app.use('/', testapi);
 
