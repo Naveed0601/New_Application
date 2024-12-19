@@ -5,7 +5,7 @@ const TestingPage = () => {
 
   const testingData = async () => {
     try {
-      const response = await fetch("http://35.200.169.163:1002/Hii");
+      const response = await fetch("http://35.200.169.163:1002/api/Hii");
       console.log(response);
       const data = await response.json();
       console.log(data);
