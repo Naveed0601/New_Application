@@ -1,10 +1,18 @@
 runtime: nodejs18
+
 handlers:
-  # Serve all static files with url ending with a file extension
-  - url: /(.*\..+)$
+  # Serve static files for React
+  - url: /static
+    static_dir: build/static
+  - url: /(.*\.(js|css|html|json|ico|png|jpg))
     static_files: build/\1
-    upload: build/(.*\..+)$
-  # Catch all handler to index.html
+    upload: build/.*\.(js|css|html|json|ico|png|jpg)
+
+  # API requests
+  - url: /Hii
+    script: auto
+    secure: always # Keep HTTPS on App Engine
+
+  # Default route
   - url: /.*
-    static_files: build/index.html
-    upload: build/index.html
+    script: auto
