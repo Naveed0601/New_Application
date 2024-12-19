@@ -1,0 +1,4 @@
+runtime: nodejs18
+instance_class: F2  # Optional: Adjust for your app's performance needs
+env_variables:
+  NODE_ENV: production
