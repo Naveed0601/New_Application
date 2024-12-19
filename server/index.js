@@ -3,7 +3,13 @@ const testapi = require('./routes/test');
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+    origin: 'https://inspiring-lens-442115-p5.de.r.appspot.com',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+  };
+  
+app.use(cors(corsOptions));
 
 app.use('/', testapi);
 
