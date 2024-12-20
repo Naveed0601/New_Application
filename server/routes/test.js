@@ -1,9 +1,7 @@
 const express = require('express');
-const {testing} = require("../controller/testContollers")
+const { testing } = require('../controller/testControllers');
 const router = express.Router();
 
-router.get('/Hii', testing);
+router.get('/Hii', testing); // Your endpoint
 
 module.exports = router;
-
-

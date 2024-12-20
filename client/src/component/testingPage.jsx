@@ -5,7 +5,7 @@ const TestingPage = () => {
 
   const testingData = async () => {
     try {
-      const response = await fetch("https://35.200.169.163:1002/api/Hii", {
+      const response = await fetch("https://back-end.xyz:1002/api/Hii", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -15,10 +15,10 @@ const TestingPage = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      console.log("API Data:", data);
-      setMessage(data);
+      setMessage(data); // store the full response
     } catch (error) {
       console.error("Error fetching data", error);
+      setMessage({ message: "Error fetching data" }); // Display error message if request fails
     }
   };
 
