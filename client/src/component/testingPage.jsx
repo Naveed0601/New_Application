@@ -5,7 +5,7 @@ const TestingPage = () => {
 
   const testingData = async () => {
     try {
-      const response = await fetch("http://back-end.xyz:1002/api/Hii", {
+      const response = await fetch("https://back-end.xyz:1002/api/Hii", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
