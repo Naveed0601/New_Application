@@ -5,10 +5,17 @@ const TestingPage = () => {
 
   const testingData = async () => {
     try {
-      const response = await fetch("https://35.200.169.163:1002/api/Hii");
-      console.log(response);
+      const response = await fetch("https://35.200.169.163:1002/api/Hii", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       const data = await response.json();
-      console.log(data);
+      console.log("API Data:", data);
       setMessage(data);
     } catch (error) {
       console.error("Error fetching data", error);
@@ -19,7 +26,7 @@ const TestingPage = () => {
     testingData();
   }, []);
 
-  return <div>{message.message}</div>;
+  return <div>{message?.message || "Loading..."}</div>;
 };
 
 export default TestingPage;
