@@ -1,6 +1,4 @@
 const express = require('express');
-const https = require('https');
-const fs = require('fs');
 const cors = require('cors');
 const testapi = require('./routes/test'); // Your API routes
 
@@ -15,13 +13,7 @@ app.use('/api', testapi);
 
 const port = 1002; // Backend port
 
-// HTTPS configuration using local self-signed certificates
-const options = {
-  key: fs.readFileSync('./ssl/privkey.pem'),
-  cert: fs.readFileSync('./ssl/fullchain.pem'),
-};
-
-// Create HTTPS server
-https.createServer(options, app).listen(port, () => {
-  console.log(`Server running on https://localhost:${port} with HTTPS`);
+// Create HTTP server (no need for HTTPS options)
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
 });
