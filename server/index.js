@@ -17,10 +17,12 @@ app.use('/api', testapi);
 const port = 1002;
 
 // HTTPS configuration (update the paths to your generated SSL certificate and key)
+console.log( (path.join(__dirname, 'private.key')));
 const options = {
-    key: fs.readFileSync(path.join(__dirname, 'private.key')),  // Correct path
-    cert: fs.readFileSync(path.join(__dirname, 'certificate.crt'))  // Correct path
+    key: fs.readFileSync(path.join(__dirname, 'private.key')),
+    cert: fs.readFileSync(path.join(__dirname, 'certificate.crt')),
 };
+
 
 https.createServer(options, app).listen(port, () => {
     console.log(`Server running on port ${port} with HTTPS`);
