@@ -16,9 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Backend API routes
-app.use('/' , async(req , res) => {
-    res.send("Done")
-})
+
 app.use('/api', testapi);
 
 const port = 1002; // Backend port
@@ -31,5 +29,5 @@ const options = {
 
 // Create HTTPS server
 https.createServer(options, app).listen(port, () => {
-  console.log('Server running on https://localhost:${port} with HTTPS and ');
+  console.log('Server running on https://localhost:${port} with HTTPS  ');
 });
