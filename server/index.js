@@ -5,7 +5,12 @@ const cors = require('cors');
 const testapi = require('./routes/test'); // Your API routes
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+    origin: 'https://splendid-window-406819.de.r.appspot.com/',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+  };
+app.use(cors(corsOptions));  
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
