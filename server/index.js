@@ -16,6 +16,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Backend API routes
+app.use('/' , async(req , res) => {
+    res.send("Done")
+})
 app.use('/api', testapi);
 
 const port = 1002; // Backend port
