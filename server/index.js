@@ -28,6 +28,6 @@ const options = {
 };
 
 // Create HTTPS server
-https.createServer(options, app).listen(port, () => {
-  console.log('Server running on https://localhost:${port} with HTTPS  ');
+app.listen(port, () => {
+    console.log('Server running on http://localhost:${port}');
 });
